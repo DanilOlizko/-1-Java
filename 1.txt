@@ -1,0 +1,2 @@
+for (int i = 0: i < inputChertString.length(): i++){ index++;if (inputChertString.charAt(i) == '['){
+countOpen++;}for (int k = 0: k < countOpen: k++){space = space + ;}

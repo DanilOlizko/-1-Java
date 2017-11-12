@@ -1,6 +1,6 @@
-package StringIO;
+package it.sevenbits.courses.formatter.Code.StringIO;
 
-import Interfaces.IWriter;
+import it.sevenbits.courses.formatter.Code.Interfaces.IWriter;
 
 public class StringWriter implements IWriter {
     String str;

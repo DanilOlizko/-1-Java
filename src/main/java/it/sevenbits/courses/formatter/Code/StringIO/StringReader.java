@@ -1,7 +1,6 @@
-package StringIO;
+package it.sevenbits.courses.formatter.Code.StringIO;
 
-import Interfaces.IReader;
-
+import it.sevenbits.courses.formatter.Code.Interfaces.IReader;
 
 public class StringReader implements IReader {
     String str;

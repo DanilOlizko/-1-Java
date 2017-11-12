@@ -1,8 +1,11 @@
-package Code;
+package it.sevenbits.courses.formatter.Code;
 
-import java.io.FileReader;
+import it.sevenbits.courses.formatter.Code.Interfaces.IFormatter;
+import it.sevenbits.courses.formatter.Code.Interfaces.IReader;
+import it.sevenbits.courses.formatter.Code.Interfaces.IWriter;
 import java.io.IOException;
-public class Format_code {
+
+public class Formatter implements IFormatter {
     public static String[] splitStr(final String splitString,final int stringIndex) {
         char[] firstStr = new char[stringIndex];
         char[] secondStr = new char[splitString.length() - stringIndex];
@@ -23,7 +26,7 @@ public class Format_code {
         return result;
     }
 
-    public void formatString(String str) throws IOException {
+    public void formatString(String str, IReader iReader, IWriter iWriter) throws IOException {
 
         int countOpen = 0;
         int index = 0;

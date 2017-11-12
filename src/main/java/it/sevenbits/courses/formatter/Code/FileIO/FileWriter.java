@@ -1,10 +1,9 @@
-package FileIO;
+package it.sevenbits.courses.formatter.Code.FileIO;
 
-import Interfaces.IClosable;
-import Interfaces.IReader;
-import Interfaces.IWriter;
+import it.sevenbits.courses.formatter.Code.Exceptions.CloseExceptions;
+import it.sevenbits.courses.formatter.Code.Interfaces.IClosable;
+import it.sevenbits.courses.formatter.Code.Interfaces.IWriter;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +18,7 @@ public class FileWriter implements IClosable, IWriter {
     PrintWriter out;
     public FileWriter(String path, String text)
     {
-        file = new File(path);
+        file = new File("2.txt");
         try {
             //проверяем, что если файл не существует то создаем его
             if(!file.exists()){
@@ -45,7 +44,7 @@ public class FileWriter implements IClosable, IWriter {
 
 
     @Override
-    public void close() throws Exception {
+    public void close() throws CloseExceptions {
         out.close();
     }
 

@@ -1,7 +1,8 @@
-package FileIO;
+package it.sevenbits.courses.formatter.Code.FileIO;
 
-import Interfaces.IClosable;
-import Interfaces.IReader;
+import it.sevenbits.courses.formatter.Code.Exceptions.CloseExceptions;
+import it.sevenbits.courses.formatter.Code.Interfaces.IClosable;
+import it.sevenbits.courses.formatter.Code.Interfaces.IReader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class FileReader implements IClosable, IReader
 
     public FileReader(String path)
     {
-        file = new File(path);
+        file = new File("1.txt");
 
         try {
             //Объект для чтения файла в буфер

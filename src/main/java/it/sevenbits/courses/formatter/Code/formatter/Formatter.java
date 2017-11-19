@@ -1,11 +1,14 @@
-package it.sevenbits.courses.formatter.Code;
+package it.sevenbits.courses.formatter.Code.formatter;
 
-import it.sevenbits.courses.formatter.Code.Interfaces.IFormatter;
-import it.sevenbits.courses.formatter.Code.Interfaces.IReader;
-import it.sevenbits.courses.formatter.Code.Interfaces.IWriter;
+import it.sevenbits.courses.formatter.Code.interfaces.exceptions.ReaderException;
+import it.sevenbits.courses.formatter.Code.interfaces.IFormatter;
+import it.sevenbits.courses.formatter.Code.interfaces.IReader;
+import it.sevenbits.courses.formatter.Code.interfaces.IWriter;
+import it.sevenbits.courses.formatter.Code.interfaces.exceptions.WriterException;
+
 import java.io.IOException;
 
-public class Formatter implements IFormatter {
+public class Formatter implements IFormatter, IReader,IWriter {
     public static String[] splitStr(final String splitString,final int stringIndex) {
         char[] firstStr = new char[stringIndex];
         char[] secondStr = new char[splitString.length() - stringIndex];
@@ -26,10 +29,11 @@ public class Formatter implements IFormatter {
         return result;
     }
 
-    public void formatString(String str, IReader iReader, IWriter iWriter) throws IOException {
+    public void formatString(IReader in, IWriter out) throws FormatterException {
 
         int countOpen = 0;
         int index = 0;
+        String str="";
         String space = "";
         String enter = "\n";
         for (int i = 0; i <str.length() ; i++) {
@@ -55,5 +59,21 @@ public class Formatter implements IFormatter {
             }
         }
         System.out.println(str);
+    }
+
+
+    @Override
+    public boolean readNext() throws ReaderException {
+        return false;
+    }
+
+    @Override
+    public char getChar() throws ReaderException {
+        return 0;
+    }
+
+    @Override
+    public void write(char symbol) throws WriterException {
+
     }
 }

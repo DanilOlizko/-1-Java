@@ -1,4 +1,4 @@
-package it.sevenbits.courses.formatter.Code.Interfaces;
+package it.sevenbits.courses.formatter.Code.interfaces;
 
 public interface AutoCloseabel {
     void close () throws Exception;
